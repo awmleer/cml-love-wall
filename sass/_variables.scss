@@ -1,0 +1,52 @@
+$default-font: 'Playfair Display', serif;
+
+/* Set assets path for different color variation */
+
+$assetPath: 'images'; //value is name of folder, for example images_lavender or images_blue
+
+/* CandyQueen */
+
+$default-text-color: #595959;
+$ghost_white: #f7f8fa;
+$cerise_pink: #e93478;
+$aubergine: #382727; //used just for span in logo
+$border-color: #d5d5d5; //light_gray
+$thick-border-color: #f8c6c1; //baby_pink
+$url: #aec059; //used once on hover in services
+$form-button-color: #e93478;
+$form-button: #c3d982;
+$form-button-hover: #b5d335;
+$form-error: #f8c6c1; //background color for error state on contact form
+
+/* Lavender Color Variation */
+
+/*
+$default-text-color: #595959;
+$ghost_white: #f7f8fa;
+$cerise_pink: #8563b7;
+$aubergine: #3a2729; //used just for span in logo
+$border-color: #d5d5d5;
+$thick-border-color: #e3dff0;
+$url: #aec059; //used once on hover in services
+$form-button-color: #8563b7;
+$form-button: #c3da82;
+$form-button-hover: #b5d335;
+$form-error: #e3e0f3; //background color for error state on contact form
+*/
+
+
+/* Blue Color Variation */
+
+/*
+$default-text-color: #595959;
+$ghost_white: #f7f8fa;
+$cerise_pink: #3bafd6;
+$aubergine: #372825; //used just for span in logo
+$border-color: #d5d5d5;
+$thick-border-color: #c6eafa;
+$url: #aec059; //used once on hover in services
+$form-button-color: #372825;
+$form-button: #c3da82;
+$form-button-hover: #b5d335;
+$form-error: #c6eafb; //background color for error state on contact form
+*/
