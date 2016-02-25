@@ -3,11 +3,12 @@ var mysql      = require('mysql');
 cors = require('cors');
 var app = express();
 app.use(cors());
+app.use(express.bodyParser());
 var connection = mysql.createConnection({
     host     : '121.42.209.162',
     user     : 'root',
     password : '86.corrode',
-    database : 'shorturl'
+    database : 'hgb'
 });
 connection.connect(function (err) {
     if (err) {
@@ -31,17 +32,13 @@ app.get('/test', function (req, res) {
 /*添加一条*/
 app.get('/new', function (req, res) {
     var shorturl = req.path.substr(2);
-    connection.query("SELECT * FROM url WHERE shorturl='"+shorturl+"'", function (err, rows) {
+    connection.query("INSERT INTO CML-love-wall (number,content,name,gender) VALUES ("+req.data.number+");", function (err, rows) {
         if (err) {
             console.log(err.code);
             console.log(err.fatal);
             res.send("fail");
         } else {
-            if (rows.length == 0) {
-                res.send("noresult");//查不到结果返回noresult
-            }else {
-                res.redirect(rows[0].longurl);//查询成功则重定向
-            }
+            res.send("ok");//成功的话返回ok
         }
     });
 

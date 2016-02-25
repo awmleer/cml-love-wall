@@ -1,91 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>CML表白墙</title>
-<meta name="Keywords" content="">
-<meta name="Description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>CML表白墙</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="style.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
     <!--TODO uncss-->
 
-<script src="scripts/jquery-1.11.0.min.js"></script>
+    <script src="scripts/jquery-1.11.0.min.js"></script>
 
 </head>
 <body>
 
 <div class="main">
 
-  <!-- Header -->
-  <div class="header" id="header">
-    <div class="container">
-      <h1><a href="index.html">女生节 <span>表白墙</span></a></h1>
+    <!-- Header -->
+    <div class="header" id="header">
+        <div class="container">
+            <h1><a href="index.html">女生节 <span>表白墙</span></a></h1>
+        </div>
     </div>
-  </div>
-  <!-- Header Ends! -->
+    <!-- Header Ends! -->
 
-  <!-- Page Content -->
-  <div class="page">
+    <!-- Page Content -->
+    <div class="page">
 
-    <div class="container">
+        <div class="container">
 
-        <!-- Slider -->
-        <div class="promo" style="width: 100%">
-            <div class="flexslider" style="height: 2em;">
+            <!-- Slider -->
+            <div class="promo" style="width: 100%">
+                <div class="flexslider" style="height: 2em;">
+                </div>
             </div>
-        </div>
-        <!-- Slider Ends! -->
+            <!-- Slider Ends! -->
 
-        <div style="width: 70%;margin-top: 1em">
-            <div class="btn-group" style="display: table;">
-                <button class="btn">全部</button>
-                <button class="btn">男生</button>
-                <button class="btn">女生</button>
+            <div style="width: 70%;margin-top: 1em">
+                <div class="btn-group" style="display: table;">
+                    <button class="btn">全部</button>
+                    <button class="btn">男生</button>
+                    <button class="btn">女生</button>
+                </div>
+                <a href="#send">
+                    <button class="btn btn-default center-block" style="width: 80%;margin-top: 1em">我也要发布</button>
+                </a>
             </div>
-            <a href="#send"><button class="btn btn-default center-block" style="width: 80%;margin-top: 1em">我也要发布</button></a>
+
+            <div class="services">
+                <a class="anchor" id="services"></a>
+                <h2>No.168</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est inventore
+                    reiciendis sed tempore. Deserunt, illum impedit laboriosam laborum magnam quasi tempore voluptas?
+                    Cumque dolorem doloremque nihil perferendis repellat, repellendus velit.</p>
+            </div>
+
+
+            <!-- Contact -->
+            <div class="contact">
+                <a class="anchor" id="send"></a>
+                <!-- Contact Form -->
+                <div class="form">
+                    <p>Use this form to contact us regarding any questions you may have.</p>
+                    <form action="" method="post">
+                        <input style="font-style: normal;" type="text" id="name" placeholder="你的名字"/>
+                        <div>
+                            <p style="display: inline;font-style: normal;font-size: 1.2em">请选择性别</p>
+                            <label class="radio-inline" style="font-size: 1.2em"><input type="radio" name="gender" value="boy">男生</label>
+                            <label class="radio-inline" style="font-size: 1.2em"><input type="radio" name="gender" value="girl">女生</label>
+                        </div>
+                        <textarea style="font-style: normal;" id="content" placeholder="输入内容..."></textarea>
+                        <button onclick="submit()" style="font-style: normal;">发布</button>
+                    </form>
+                </div>
+                <!-- Contact Form Ends! -->
+            </div>
+            <!-- Contact Ends! -->
+
         </div>
-
-        <div class="services">
-            <a class="anchor" id="services"></a>
-            <h2>No.168</h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est inventore reiciendis sed tempore. Deserunt, illum impedit laboriosam laborum magnam quasi tempore voluptas? Cumque dolorem doloremque nihil perferendis repellat, repellendus velit.</p>
-        </div>
-
-
-
-      <!-- Contact -->
-      <div class="contact">
-        <a class="anchor" id="send"></a>
-        <!-- Contact Form -->
-        <div class="form">
-          <p>Use this form to contact us regarding any questions you may have.</p>
-          <form action="" method="post">
-            <input style="font-style: normal;" type="text" name="name" placeholder="你的名字"/>
-            <input style="font-style: normal;" type="text" name="email" placeholder="编号"/>
-            <textarea style="font-style: normal;" name="message" placeholder="输入内容..."></textarea>
-            <button style="font-style: normal;">发布</button>
-          </form>
-        </div>
-        <!-- Contact Form Ends! -->
-      </div>
-      <!-- Contact Ends! -->
-
     </div>
-  </div>
-  <!-- Page Ends! -->
+    <!-- Page Ends! -->
 
-  <!-- Footer -->
-  <div class="footer">
-    <div class="container">
-      <p>CML创业俱乐部</p>
-        <!--TODO 站长统计-->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>CML创业俱乐部</p>
+            <!--TODO 站长统计-->
+        </div>
     </div>
-  </div>
-  <!-- Footer Ends! -->
+    <!-- Footer Ends! -->
 
 </div>
 
+
+<script>
+    function submit() {
+        $.ajax({
+            url: "urlurl/new",
+            type: "post",
+            data: {
+                name: $("#name").val(),
+//                TODO jquery获取gender
+                gender:123,
+                content: $("#content").val()
+            }
+        }).done(function (data) {
+            alert("提交成功，您的编号是：" + data);
+            location.reload();
+        }).fail(function () {
+            alert("发表失败，请稍后再试");
+        });
+    }
+</script>
 </body>
 </html>

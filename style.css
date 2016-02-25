@@ -746,16 +746,16 @@ a {
           width: 80%;
           float: none;
           margin: 0 auto 40px; } }
-      .page .contact .form p, .page .contact .form input, .page .contact .form textarea, .page .contact .form button {
+      .page .contact .form p, .page .contact .form input[id="name"], .page .contact .form textarea, .page .contact .form button {
         margin: 0 1.5625%; }
       .page .contact .form p {
         font-size: 21px;
         font-style: italic;
         margin-bottom: 26px; }
-      .page .contact .form input, .page .contact .form textarea {
+      .page .contact .form input[id="name"], .page .contact .form textarea {
         margin-bottom: 16px;
         padding: 15px 20px; }
-      .page .contact .form input, .page .contact .form textarea, .page .contact .form button {
+      .page .contact .form input[id="name"], .page .contact .form textarea, .page .contact .form button {
         border: none;
         font-style: italic;
         font-family: "Playfair Display", serif;
@@ -771,26 +771,23 @@ a {
         -webkit-border-radius: 6px;
         border-radius: 6px;
         background-clip: padding-box; }
-      .page .contact .form input, .page .contact .form button {
+      .page .contact .form input[id="name"], .page .contact .form button {
         height: 50px; }
-      .page .contact .form input {
-        width: 46.875%;
+      .page .contact .form input[id="name"] {
+        width: 96.875%;
         float: left;
         padding-left: 40px;
         background-color: #f7f8fa;
         background-image: url(images/icons-sprite.png);
         background-repeat: no-repeat; }
         @media all and (max-width: 320px) {
-          .page .contact .form input {
+          .page .contact .form input[id="name"] {
             width: 96.875%;
             float: none; } }
-        .page .contact .form input[name="email"] {
-          background-position: 10px -157px; }
-          .page .contact .form input[name="email"].error {
-            background-position: 10px -214px; }
-        .page .contact .form input[name="name"] {
+
+        .page .contact .form input[id="name"] {
           background-position: 10px -266px; }
-          .page .contact .form input[name="name"].error {
+          .page .contact .form input[id="name"].error {
             background-position: 10px -323px; }
         .page .contact .form input.error {
           background-color: #f8c6c1; }
