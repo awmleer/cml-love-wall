@@ -7,15 +7,12 @@
 <meta name="Description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="style.css" rel="stylesheet" type="text/css">
-<link href="scripts/flexslider/flexslider.css" rel="stylesheet" type="text/css">
+    <!--TODO uncss-->
 
 <script src="scripts/jquery-1.11.0.min.js"></script>
 <script src="scripts/flexslider/jquery.flexslider-min.js"></script>
-<script src="scripts/imagelightbox.min.js"></script>
-<script src="scripts/functions.js"></script>
-<script src="scripts/form.js"></script>
-<script src="scripts/scroll.js"></script>
 
 </head>
 <body>
@@ -32,46 +29,19 @@
 
   <!-- Page Content -->
   <div class="page">
+
     <div class="container">
 
-      <!-- Slider -->
-      <div class="promo">
-
-        <div class="flexslider" style="height: 2em;">
-        </div>
-
-      </div>
-      <!-- Slider Ends! -->
-
-        <!-- Services -->
-        <div class="services">
-            <a class="anchor" id="services"></a>
-
-            <h2>活动简介</h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum exercitationem inventore ipsum maiores quisquam reprehenderit voluptas. Doloremque ex fugiat harum impedit laboriosam maiores molestias necessitatibus nemo nesciunt, quas, ratione reiciendis.</p>
-
-            <div class="service">
-                <h3>Service with love</h3>
-                <p>Maecenas in ornare ante. Quisque nec lectus felis. Ut vel eleifend urna, non dictum felis.</p>
-            </div>
-
-            <div class="event">
-                <h3>Make your event special</h3>
-                <ul>
-                    <li><a href="">Corporate Events</a></li>
-                    <li><a href="">VIP Parties</a></li>
-                    <li><a href="">Birthdays & Celebrations</a></li>
-                    <li><a href="">Weddings</a></li>
-                    <li><a href="">Baby Showers</a></li>
-                </ul>
-            </div>
-
-            <div class="delivery">
-                <h3>Speedy delivery</h3>
-                <p>Praesent in pellentesque purus, sed lobortis quam. Nulla in varius leo. Aenean varius, sem non molestie congue, odio nisl porta purus, sed porttitor dolor dolor egestas purus.</p>
+        <!-- Slider -->
+        <div class="promo" style="width: 100%">
+            <div class="flexslider" style="height: 2em;">
             </div>
         </div>
-        <!-- Services Ends! -->
+        <!-- Slider Ends! -->
+        <div>
+            <button class="btn btn-danger">男生</button>
+            <button class="btn">女生</button>
+        </div>
 
         <div class="services">
             <a class="anchor" id="services"></a>
@@ -81,47 +51,20 @@
 
 
 
-        <!--<div class="map">-->
-            <!--<div id="map_canvas"></div>-->
-            <!--<div class="address">-->
-                <!--<div>-->
-                    <!--<h3>NO.6151</h3>-->
-                    <!--<h4>Candy Queen</h4>-->
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iste sunt voluptate. Aliquam aspernatur blanditiis, deserunt dolor dolores ipsam molestias, natus nesciunt pariatur porro qui quis quod, sunt veniam vero!</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-
-
-
       <!-- Contact -->
       <div class="contact">
         <a class="anchor" id="contact"></a>
-
         <!-- Contact Form -->
         <div class="form">
           <p>Use this form to contact us regarding any questions you may have.</p>
-          <p class="message"></p>
-          <p class="error-email"></p>
-
           <form action="" method="post">
-            <input type="text" name="name" placeholder="name"/>
-            <input type="text" name="email" placeholder="your email"/>
-            <textarea name="message" placeholder="type your message..."></textarea>
-
-            <button name="submit" type="submit">send my message</button>
+            <input style="font-style: normal;" type="text" name="name" placeholder="你的名字"/>
+            <input style="font-style: normal;" type="text" name="email" placeholder="编号"/>
+            <textarea style="font-style: normal;" name="message" placeholder="输入内容..."></textarea>
+            <button style="font-style: normal;">发布</button>
           </form>
         </div>
         <!-- Contact Form Ends! -->
-
-        <!-- More -->
-        <div class="more">
-          <h4>Want to know more?</h4>
-          <p>Please don’t hesitate to contact us. Fill out the form on the left, and we will get back to you as soon as possible. Thank you!</p>
-        </div>
-        <!-- More Ends! -->
-
       </div>
       <!-- Contact Ends! -->
 
@@ -133,6 +76,7 @@
   <div class="footer">
     <div class="container">
       <p>CML创业俱乐部</p>
+        <!--TODO 站长统计-->
     </div>
   </div>
   <!-- Footer Ends! -->
