@@ -100,12 +100,12 @@
 <script>
     function submit() {
         $.ajax({
-            url: "urlurl/new",
+            url: "http://127.0.0.1:3000/new",
             type: "post",
             data: {
                 name: $("#name").val(),
 //                TODO jquery获取gender
-                gender:123,
+                gender:"boy",
                 content: $("#content").val()
             }
         }).done(function (data) {

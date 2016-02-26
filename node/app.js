@@ -1,9 +1,16 @@
 var express = require('express');
 var mysql      = require('mysql');
-cors = require('cors');
 var app = express();
+
+//解决跨域问题
+cors = require('cors');
 app.use(cors());
-app.use(express.bodyParser());
+
+//引入body-parser
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 var connection = mysql.createConnection({
     host     : '121.42.209.162',
     user     : 'root',
@@ -30,8 +37,7 @@ app.get('/test', function (req, res) {
 
 
 /*添加一条*/
-app.get('/new', function (req, res) {
-    var shorturl = req.path.substr(2);
+app.post('/new', function (req, res) {
     connection.query("INSERT INTO CML-love-wall (number,content,name,gender) VALUES ("+req.data.number+");", function (err, rows) {
         if (err) {
             console.log(err.code);
@@ -44,6 +50,18 @@ app.get('/new', function (req, res) {
 
 });
 
+
+app.get('/items', function (req, res) {
+    connection.query("SELECT number,content,gender FROM CML-love-wall;", function (err, rows) {
+        if (err) {
+            console.log(err.code);
+            console.log(err.fatal);
+            res.send("fail");
+        } else {
+            res.send(rows);//成功的话返回ok
+        }
+    });
+});
 
 /*启动服务器*/
 var server = app.listen(3000, function () {
