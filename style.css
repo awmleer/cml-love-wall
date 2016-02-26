@@ -798,21 +798,9 @@ a {
         background: #f7f8fa; }
         .page .contact .form textarea.error {
           background-color: #f8c6c1; }
-      .page .contact .form button {
-        background: #c3d982;
-        color: #e93478;
-        font-size: 22px;
+      .page .contact button {
         width: 96.875%;
-        cursor: pointer;
-        -webkit-text-shadow: 0 1px 0 #f7f8fa;
-        -moz-text-shadow: 0 1px 0 #f7f8fa;
-        text-shadow: 0 1px 0 #f7f8fa;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out; }
-        .page .contact .form button:hover {
-          background: #b5d335; }
+        }
     .page .contact .more {
       float: right;
       margin-right: 10%;

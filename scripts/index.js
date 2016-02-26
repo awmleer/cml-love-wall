@@ -1,6 +1,6 @@
 var app = angular.module("index", []);
 app.controller("ctrlindex", function ($scope,$http) {
-    $scope.genderfilter = 'boy';
+    $scope.genderfilter = '';
     //TODO http获取items
     $scope.items = [
         {

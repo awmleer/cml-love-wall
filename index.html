@@ -74,8 +74,8 @@
                             <label class="radio-inline" style="font-size: 1.2em"><input type="radio" name="gender" value="girl">女生</label>
                         </div>
                         <textarea style="font-style: normal;" id="content" placeholder="输入内容..."></textarea>
-                        <button onclick="submit()" style="font-style: normal;">发布</button>
                     </form>
+                    <button class="btn btn-default" onclick="newitem()" style="font-style: normal;">发布</button>
                 </div>
                 <!-- Contact Form Ends! -->
             </div>
@@ -98,19 +98,29 @@
 
 
 <script>
-    function submit() {
+    function newitem() {
+        name=$("#name").val();
+        content=$("#content").val();
+        if (name=="") {
+            alert("请输入姓名");
+            return;
+        }
+        if (content=="") {
+            alert("请输入内容");
+            return;
+        }
         $.ajax({
-            url: "http://127.0.0.1:3000/new",
+            url: "http://127.0.0.1:3000/newitem",
             type: "post",
             data: {
-                name: $("#name").val(),
+                name: name,
 //                TODO jquery获取gender
                 gender:"boy",
-                content: $("#content").val()
+                content: content
             }
         }).done(function (data) {
             alert("提交成功，您的编号是：" + data);
-            location.reload();
+//            location.reload();
         }).fail(function () {
             alert("发表失败，请稍后再试");
         });
