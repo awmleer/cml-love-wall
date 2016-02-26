@@ -12,9 +12,11 @@
     <!--TODO uncss-->
 
     <script src="scripts/jquery-1.11.0.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/index.js"></script>
 
 </head>
-<body>
+<body ng-app="index" ng-controller="ctrlindex">
 
 <div class="main">
 
@@ -40,9 +42,9 @@
 
             <div style="width: 70%;margin-top: 1em">
                 <div class="btn-group" style="display: table;">
-                    <button class="btn">全部</button>
-                    <button class="btn">男生</button>
-                    <button class="btn">女生</button>
+                    <button ng-click="filter('')" class="btn" ng-class="{'btn-danger':genderfilter==''}">全部</button>
+                    <button ng-click="filter('boy')" class="btn" ng-class="{'btn-danger':genderfilter=='boy'}">男生</button>
+                    <button ng-click="filter('girl')" class="btn" ng-class="{'btn-danger':genderfilter=='girl'}">女生</button>
                 </div>
                 <a href="#send">
                     <button class="btn btn-default center-block" style="width: 80%;margin-top: 1em">我也要发布</button>
@@ -50,11 +52,10 @@
             </div>
 
             <div class="services">
-                <a class="anchor" id="services"></a>
-                <h2>No.168</h2>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est inventore
-                    reiciendis sed tempore. Deserunt, illum impedit laboriosam laborum magnam quasi tempore voluptas?
-                    Cumque dolorem doloremque nihil perferendis repellat, repellendus velit.</p>
+                <div ng-repeat="i in items | orderBy:'dorm' | filter:{'gender':genderfilter}">
+                    <h2>No.{{ i.number }} {{ i.gender=='boy'?'♂':'♀' }}</h2>
+                    <p class="description">{{ i.content }}</p>
+                </div>
             </div>
 
 
@@ -63,6 +64,7 @@
                 <a class="anchor" id="send"></a>
                 <!-- Contact Form -->
                 <div class="form">
+                    <!--TODO 这里的文字-->
                     <p>Use this form to contact us regarding any questions you may have.</p>
                     <form action="" method="post">
                         <input style="font-style: normal;" type="text" id="name" placeholder="你的名字"/>
