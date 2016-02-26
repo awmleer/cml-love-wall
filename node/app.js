@@ -7,7 +7,7 @@ app.use(express.bodyParser());
 var connection = mysql.createConnection({
     host     : '121.42.209.162',
     user     : 'root',
-    password : '86.corrode',
+    password : '',
     database : 'hgb'
 });
 connection.connect(function (err) {
