@@ -87,10 +87,9 @@ app.post('/newitem', function (req, res) {
 
 
 app.get('/items', function (req, res) {
-    connection.query("SELECT number,content,gender FROM CML-love-wall;", function (err, rows) {
+    connection.query("SELECT number,content,gender FROM `CML-love-wall`;", function (err, rows) {
         if (err) {
             console.log(err.code);
-            console.log(err.fatal);
             res.send("fail");
         } else {
             res.send(rows);//成功的话返回ok
