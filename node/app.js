@@ -49,9 +49,10 @@ app.get('/test', function (req, res) {
 
 
 
-/*添加一条*/
+/*添加一条newitem*/
 app.post('/newitem', function (req, res) {
     var number=mathrand();
+    //同步执行
     async.series([
         function(callback){
             function generate(){
@@ -86,6 +87,8 @@ app.post('/newitem', function (req, res) {
 });
 
 
+
+/*items*/
 app.get('/items', function (req, res) {
     connection.query("SELECT number,content,gender FROM `CML-love-wall`;", function (err, rows) {
         if (err) {
@@ -96,6 +99,7 @@ app.get('/items', function (req, res) {
         }
     });
 });
+
 
 /*启动服务器*/
 var server = app.listen(3000, function () {

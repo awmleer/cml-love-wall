@@ -10,18 +10,6 @@ app.controller("ctrlindex", function ($scope,$http) {
     }).error(function () {
         alert("获取信息失败，请稍后再试");
     });
-    $scope.items = [
-        {
-            number:"54546",
-            content:"eljfewafll  dfaiej",
-            gender:"boy"
-        },
-        {
-            number:"1586",
-            content:"hhhh3qpfj",
-            gender:"girl"
-        }
-    ];
     $scope.filter = function (gender) {
         $scope.genderfilter = gender;
     };
