@@ -100,8 +100,9 @@
 
 <script>
     function newitem() {
-        name=$("#name").val();
-        content=$("#content").val();
+        var name=$("#name").val();
+        var content=$("#content").val();
+        var gender=$("input[name='gender']:checked").val();
         if (name=="") {
             alert("请输入姓名");
             return;
@@ -110,18 +111,21 @@
             alert("请输入内容");
             return;
         }
+        if (gender == undefined) {
+            alert("请选择性别");
+            return;
+        }
         $.ajax({
             url: "http://127.0.0.1:3000/newitem",
             type: "post",
             data: {
                 name: name,
-//                TODO jquery获取gender
-                gender:"boy",
+                gender:gender,
                 content: content
             }
         }).done(function (data) {
             alert("提交成功，您的编号是：" + data);
-//            location.reload();
+            location.reload();
         }).fail(function () {
             alert("发表失败，请稍后再试");
         });
