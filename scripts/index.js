@@ -3,7 +3,7 @@ app.controller("ctrlindex", function ($scope,$http) {
     $scope.genderfilter = 'girl';
     //TODO http获取items
     $http({
-        url: 'http://127.0.0.1:3000/items',
+        url: 'http://120.27.121.63:3000/items',
         method: 'get',
     }).success(function (data) {
         $scope.items = data;
