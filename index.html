@@ -23,7 +23,7 @@
     <!-- Header -->
     <div class="header" id="header">
         <div class="container">
-            <h1><a href="index.html">女生节 <span>表白墙</span></a></h1>
+            <h1 style="font-size: 2.5em;"><a href="index.html">女生节 <span  style="font-size: 1em;">表白墙</span></a></h1>
         </div>
     </div>
     <!-- Header Ends! -->
@@ -41,19 +41,14 @@
             <!-- Slider Ends! -->
 
             <div style="width: 70%;margin-top: 1em">
-                <div class="btn-group" style="display: table;">
-                    <button ng-click="filter('')" class="btn" ng-class="{'btn-danger':genderfilter==''}">全部</button>
-                    <button ng-click="filter('boy')" class="btn" ng-class="{'btn-danger':genderfilter=='boy'}">男生</button>
-                    <button ng-click="filter('girl')" class="btn" ng-class="{'btn-danger':genderfilter=='girl'}">女生</button>
-                </div>
                 <a href="#send">
                     <button class="btn btn-default center-block" style="width: 80%;margin-top: 1em">我也要发布</button>
                 </a>
             </div>
 
             <div class="services">
-                <div ng-repeat="i in items | orderBy:'dorm' | filter:{'gender':genderfilter}">
-                    <h2>No.{{ i.number }} {{ i.gender=='boy'?'♂':'♀' }}</h2>
+                <div ng-repeat="i in items | orderBy:'number'">
+                    <h2>No.{{ i.number }}</h2>
                     <p class="description">{{ i.content }}</p>
                 </div>
             </div>
@@ -66,14 +61,9 @@
                 <div class="form">
                     <!--TODO 这里的文字-->
                     <a id="send"></a>
-                    <p>Use this form to contact us regarding any questions you may have.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur facere fugiat nemo perferendis, quasi quisquam sapiente suscipit temporibus tenetur!</p>
                     <form action="" method="post">
                         <input style="font-style: normal;" type="text" id="name" placeholder="你的名字"/>
-                        <div>
-                            <p style="display: inline;font-style: normal;font-size: 1.2em">请选择性别</p>
-                            <label class="radio-inline" style="font-size: 1.2em"><input type="radio" name="gender" value="boy">男生</label>
-                            <label class="radio-inline" style="font-size: 1.2em"><input type="radio" name="gender" value="girl">女生</label>
-                        </div>
                         <textarea style="font-style: normal;" id="content" placeholder="输入内容..."></textarea>
                     </form>
                     <button class="btn btn-default" onclick="newitem()" style="font-style: normal;">发布</button>
@@ -110,16 +100,12 @@
             alert("请输入内容");
             return;
         }
-        if (gender == undefined) {
-            alert("请选择性别");
-            return;
-        }
         $.ajax({
             url: "http://127.0.0.1:3000/newitem",
             type: "post",
             data: {
                 name: name,
-                gender:gender,
+                gender:'girl',
                 content: content
             }
         }).done(function (data) {
