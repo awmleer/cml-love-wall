@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>CML表白墙</title>
+    <title>浙里女生墙</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,9 +59,8 @@
                 <a class="anchor" id="nouse"></a>
                 <!-- Contact Form -->
                 <div class="form">
-                    <!--TODO 这里的文字-->
                     <a id="send"></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur facere fugiat nemo perferendis, quasi quisquam sapiente suscipit temporibus tenetur!</p>
+                    <p style="font-style: normal">在下面写出你的风采~</p>
                     <form action="" method="post">
                         <input style="font-style: normal;" type="text" id="name" placeholder="你的名字"/>
                         <textarea style="font-style: normal;" id="content" placeholder="输入内容..."></textarea>
@@ -101,7 +100,7 @@
             return;
         }
         $.ajax({
-            url: "http://120.27.121.63:3000/newitem",
+            url: "http://121.42.209.162:3000/newitem",
             type: "post",
             data: {
                 name: name,

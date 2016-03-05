@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
     host     : '121.42.209.162',
     user     : 'root',
-    password : '',
+    password : '86.corrode',
     database : 'hgb'
 });
 connection.connect(function (err) {
